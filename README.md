@@ -1,10 +1,3 @@
-# chatgpt
-GPT-4已经发布，快进群参与讨论吧…… 免费加群，即将达到500人上限，欲加从速。群里已有人拿到GPT-4接口访问权限，目前暂不支持输入图片，并且模型价格较贵。
-------
-**2023-03-16更新版本日志：**
-
-1. 支持表格和公式的显示
-2. 优化了代码显示逻辑
 
 ------
 **2023-03-11更新版本日志：**
@@ -36,38 +29,3 @@ GPT-4已经发布，快进群参与讨论吧…… 免费加群，即将达到50
 index.php前面的代码还可以实现区分内外网IP，内网直接访问，外网通过BASIC认证后可访问。可以根据需要删掉注释并进行修改。
 
 部署好了可以放在公司内网，让同事们一起体验chatGPT的强大功能。也可以发到朋友圈分享，互联网技术大牛的形象直接拉满。
-
-
-FAQ：
-
-之前OpenAI官方API提供的最先进的模型是text-davinci-003，比官网的ChatGPT稍弱一些。最近OpenAI终于放出了gpt-3.5-turbo模型，理论上和官网的ChatGPT几乎没区别了。只是由于接口限制，问题和答案最多4096个tokens，实测1个汉字算2个tokens。
-
-github上也有一些大神提供了基于官方web版chatgpt的代码（ https://github.com/acheong08/ChatGPT ）。原理就是把服务器模拟成一个客户端来和openai交互，用户所有请求通过服务器中转到openai。这个模式需要服务器IP是chatgpt支持的区域，并且稳定性差一些，问多了一段时间内可能会一直失败。好处是不限制问题和答案长度，不需要扣费。不过最新的模型放出来之后，这种方案就更加鸡肋了，好在之前没投入太多精力研究……
-
-有网友提出想使用docker方式运行本项目，其实随便找一个nginx+php环境的docker，把path指向本项目所在的目录就行了。这里提供热心网友提供的docker镜像：gindex/nginx-php。使用方式如下：
-
-```
-docker pull gindex/nginx-php
-docker run -itd -v /root/chatgpt(本地目录):/usr/share/nginx/html --name nginx-php -p 8080(主机端口):80 --restart=always gindex/nginx-php
-```
-
-还有另一位热心网友基于本项目在github上的docker版chatgpt，网址：https://github.com/hsmbs/chatgpt-php ，也可以用。
-
-喜欢使用独立Windows桌面应用的朋友可以下载Release里面的exe文件运行，其实就是一个指向我演示网站的浏览器套个壳。
-
-OpenAI官网的模型和接口调用介绍：
-
-https://platform.openai.com/docs/models/moderation
-
-https://platform.openai.com/docs/api-reference/chat/create
-
-https://platform.openai.com/docs/guides/chat/introduction
-
-https://platform.openai.com/docs/api-reference/models/list
-
-
-对chatgpt感兴趣的同学们欢迎加群讨论。可以加我微信沟通。
-
-
-最后，我还做了个在微信个人订阅号中通过调用OpenAI最新接口和gpt-3.5-turbo模型实现ChatGPT聊天机器人的功能，已开源，需要的朋友也可以拿去。
-
